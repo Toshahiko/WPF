@@ -12,11 +12,21 @@
     d:DataContext="{d:DesignInstance vm:CharacterAdditionViewModel}"
     mc:Ignorable="d">
     <StackPanel Orientation="Vertical">
-        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Characters}">
+        <DataGrid
+            x:Name="DataGrid1"
+            AutoGenerateColumns="False"
+            ItemsSource="{Binding Characters}">
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn Binding="{Binding IsEnable}" Header="Enable" />
                 <DataGridTextColumn Binding="{Binding Name}" Header="Name" />
                 <DataGridTextColumn Binding="{Binding Job}" Header="Job" />
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="OnEditButton_Click" Content="Edit" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <Button

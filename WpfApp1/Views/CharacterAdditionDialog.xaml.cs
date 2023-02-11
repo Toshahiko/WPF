@@ -29,5 +29,13 @@ namespace WpfApp1.Views
       DataContext = vm;
       InitializeComponent();
     }
+
+    private void OnEditButton_Click(object sender, RoutedEventArgs e)
+    {
+      var index = DataGrid1.Items.IndexOf(DataGrid1.CurrentItem);
+
+      var vm = (CharacterAdditionViewModel)DataContext;
+      vm.EditItem(index);
+    }
   }
 }

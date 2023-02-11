@@ -3,13 +3,9 @@
 // See the LICENSE file in the project root for more information.
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.ComponentModel;
 using System.Reactive.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Reactive.Bindings;
-using Reactive.Bindings.Extensions;
 using WpfApp1.Models;
 
 namespace WpfApp1.ViewModels
@@ -25,7 +21,13 @@ namespace WpfApp1.ViewModels
       _model = model;
       Characters = _model.Characters.ToReadOnlyReactiveCollection();
       AddCommand = new ReactiveCommand();
-      AddCommand.Subscribe( _ => _model.Characters.Add( new Warior( "name ")));
+      AddCommand.Subscribe( _ => _model.Characters.Add( new Warior( "name")));
+    }
+
+    public void EditItem( int index )
+    {
+      _model.Characters[index].Name = "Buhin";
+      _model.Characters[index].IsEnable = true;
     }
   }
 }

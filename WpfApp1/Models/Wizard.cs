@@ -13,7 +13,7 @@ namespace WpfApp1.Models
   public class Wizard : BindableBase, ICharacter
   {
     private string _name;
-
+    private bool _isEnable = false;
     public Wizard(string name)
     {
       _name = name;
@@ -21,9 +21,10 @@ namespace WpfApp1.Models
 
     private string _job => nameof(Wizard);
 
-    public string Name { get => _name; private set => _name = value; }
+    public string Name { get => _name; set => SetProperty( ref _name, value ); }
 
     public string Job { get => _job; }
-    public bool IsEnable { get; set; } = false;
+    public bool IsEnable { get => _isEnable; set => SetProperty(ref _isEnable, value); }
+
   }
 }
