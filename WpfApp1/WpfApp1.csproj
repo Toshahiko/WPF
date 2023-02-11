@@ -88,6 +88,7 @@
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Warior.cs" />
     <Compile Include="Models\Wizard.cs" />
+    <Compile Include="ValueClass.cs" />
     <Compile Include="ViewModels\CharacterAdditionViewModel.cs" />
     <Compile Include="ViewModels\TestViewModel.cs" />
     <Compile Include="Views\CharacterAdditionDialog.xaml.cs">

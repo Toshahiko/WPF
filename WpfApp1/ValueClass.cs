@@ -4,21 +4,18 @@
 
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Reactive.Bindings;
 
-namespace WpfApp1.Models
+namespace WpfApp1
 {
-  public class CharacterAdditionModel
+  public class ValueClass<T> : BindableBase
   {
-    public ObservableCollection<ValueClass<ICharacter>> Characters { get; } = new ObservableCollection<ValueClass<ICharacter>>();
-
-    public CharacterAdditionModel()
-    {
-
+    private T _value;
+    public T Value { get => _value; set => SetProperty(ref _value, value); }
+    public ValueClass( T value ) {
+      Value = value;
     }
   }
 }

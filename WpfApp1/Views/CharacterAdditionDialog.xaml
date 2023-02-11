@@ -17,9 +17,9 @@
             AutoGenerateColumns="False"
             ItemsSource="{Binding Characters}">
             <DataGrid.Columns>
-                <DataGridCheckBoxColumn Binding="{Binding IsEnable}" Header="Enable" />
-                <DataGridTextColumn Binding="{Binding Name}" Header="Name" />
-                <DataGridTextColumn Binding="{Binding Job}" Header="Job" />
+                <DataGridCheckBoxColumn Binding="{Binding Value.IsEnable}" Header="Enable" />
+                <DataGridTextColumn Binding="{Binding Value.Name}" Header="Name" />
+                <DataGridTextColumn Binding="{Binding Value.Job}" Header="Job" />
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

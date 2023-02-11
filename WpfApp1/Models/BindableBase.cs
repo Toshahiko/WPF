@@ -11,10 +11,6 @@ public class BindableBase : INotifyPropertyChanged
 
   protected void SetProperty<T>(ref T field, T value, [CallerMemberName] string propertyName = null)
   {
-    if (Comparer<T>.Default.Compare(field, value) == 0)
-    {
-      return;
-    }
 
     field = value;
     RaisePropertyChanged(propertyName);
