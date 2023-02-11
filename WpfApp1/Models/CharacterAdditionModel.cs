@@ -14,7 +14,7 @@ namespace WpfApp1.Models
 {
   public class CharacterAdditionModel
   {
-    public ObservableCollection<ValueClass<ICharacter>> Characters { get; } = new ObservableCollection<ValueClass<ICharacter>>();
+    public ObservableCollection<BindableItem<ICharacter>> Characters { get; } = new ObservableCollection<BindableItem<ICharacter>>();
 
     public CharacterAdditionModel()
     {

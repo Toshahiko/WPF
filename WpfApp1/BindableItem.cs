@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace WpfApp1
 {
-  public class ValueClass<T> : BindableBase
+  public class BindableItem<T> : BindableBase
   {
     private T _value;
     public T Value { get => _value; set => SetProperty(ref _value, value); }
-    public ValueClass( T value ) {
+    public BindableItem( T value ) {
       Value = value;
     }
   }

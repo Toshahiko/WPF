@@ -12,8 +12,8 @@ namespace WpfApp1.Models
 {
   public interface ICharacter
   {
-    bool IsEnable { get; set; }
-    string Name { get; set; }
+    bool IsEnable { get; }
+    string Name { get; }
     string Job { get; }
   }
 }

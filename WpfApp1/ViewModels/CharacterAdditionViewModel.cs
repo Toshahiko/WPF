@@ -12,7 +12,7 @@ namespace WpfApp1.ViewModels
 {
   public class CharacterAdditionViewModel
   {
-    public ReadOnlyReactiveCollection<ValueClass<ICharacter>> Characters { get; }
+    public ReadOnlyReactiveCollection<BindableItem<ICharacter>> Characters { get; }
     public ReactiveCommand AddCommand { get; }
     private CharacterAdditionModel _model;
 
@@ -21,12 +21,19 @@ namespace WpfApp1.ViewModels
       _model = model;
       Characters = _model.Characters.ToReadOnlyReactiveCollection();
       AddCommand = new ReactiveCommand();
-      AddCommand.Subscribe( _ => _model.Characters.Add( new ValueClass<ICharacter>( new Warior( "name") )));
+      AddCommand.Subscribe( _ => _model.Characters.Add( new BindableItem<ICharacter>( new Warior( "Yamosu") )));
     }
 
     public void EditItem( int index )
     {
-      _model.Characters[index].Value = new Wizard("Buhin");
+      if (_model.Characters[index].Value is Warior )
+      {
+        _model.Characters[index].Value = new Wizard("Buhin");
+      } else
+      {
+        _model.Characters[index].Value = new Warior("Yamosu");
+
+      }
     }
   }
 }
