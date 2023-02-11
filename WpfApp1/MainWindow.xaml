@@ -5,16 +5,17 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:WpfApp1"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
     Title="MainWindow"
     Width="800"
     Height="450"
     mc:Ignorable="d">
-    <DockPanel>
-        <Menu DockPanel.Dock="Top">
+    <StackPanel>
+        <Menu>
             <MenuItem Header="Menu1">
                 <MenuItem Click="MenuItem_Click11" Header="Menu1-1" />
                 <MenuItem Click="MenuItem_Click12" Header="Menu1-2" />
             </MenuItem>
         </Menu>
-    </DockPanel>
+    </StackPanel>
 </Window>
