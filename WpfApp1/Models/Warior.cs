@@ -4,7 +4,7 @@
 
 namespace WpfApp1.Models
 {
-  public class Warior : BindableBase, ICharacter
+  public class Warior : ICharacter
   {
     private string _name;
     private bool _isEnable = false;
@@ -14,12 +14,14 @@ namespace WpfApp1.Models
       _name = name;
     }
 
+    public string Job { get => _job; }
     private string _job => nameof(Warior);
 
-    public string Name { get => _name; set => SetProperty(ref _name, value); }
+    //public string Name { get => _name; set => SetProperty(ref _name, value); }
+    public string Name { get => _name; set => _name = value; }
 
-    public string Job { get => _job; }
+    //public bool IsEnable { get => _isEnable; set => SetProperty(ref _isEnable, value); }
 
-    public bool IsEnable { get => _isEnable; set => SetProperty(ref _isEnable, value); }
+    public bool IsEnable { get => _isEnable; set => _isEnable = value; }
   }
 }

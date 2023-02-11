@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace WpfApp1.Models
 {
-  public class Wizard : BindableBase, ICharacter
+  public class Wizard : ICharacter
   {
     private string _name;
     private bool _isEnable = false;
@@ -20,11 +20,14 @@ namespace WpfApp1.Models
     }
 
     private string _job => nameof(Wizard);
-
-    public string Name { get => _name; set => SetProperty( ref _name, value ); }
-
     public string Job { get => _job; }
-    public bool IsEnable { get => _isEnable; set => SetProperty(ref _isEnable, value); }
+
+    //public string Name { get => _name; set => SetProperty(ref _name, value); }
+    public string Name { get => _name; set => _name = value; }
+
+    //public bool IsEnable { get => _isEnable; set => SetProperty(ref _isEnable, value); }
+
+    public bool IsEnable { get => _isEnable; set => _isEnable = value; }
 
   }
 }
